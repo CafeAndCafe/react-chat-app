@@ -1,0 +1,5 @@
+{
+  "parser": "babel-eslint",
+  "estends": "airbnb",
+  "plugins": ["react", "jsx-ally", "import"]
+}
