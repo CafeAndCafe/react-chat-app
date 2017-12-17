@@ -1,31 +1,68 @@
 {
   "name": "react-chat-app",
-  "version": "1.0.0",
-  "description": "Simple React based chat application",
-  "main": "index.js",
-  "repository": "git@github.com:CafeAndCafe/react-chat-app.git",
-  "author": "Graham Langford",
-  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Simple React Based Chat App",
+  "main": "src/index.js",
   "scripts": {
-    "lint": "eslint '**/*.{js,jsx}' --quiet",
-    "format": "prettier --write '**/*.{js,jsx}'",
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "node server/server.js",
+    "start:dashboard": "webpack-dashboard node server/server.js",
+    "postinstall": "npm run build",
+    "build": "webpack --config webpack/webpack.prod.config.js",
+    "clean": "rm -rf build",
+    "lint": "eslint src --ext .js*",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "engines": {
+    "node": "^8.9.3"
+  },
+  "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "compression": "^1.7.1",
+    "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.29.0",
+    "morgan": "^1.9.0",
+    "postcss": "^6.0.14",
+    "postcss-browser-reporter": "^0.5.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.9",
+    "postcss-nested": "^3.0.0",
+    "postcss-reporter": "^5.0.0",
+    "postcss-url": "^7.3.0",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.1.3",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.3",
-    "babel-loader": "^7.1.2",
-    "babel-preset-react": "^6.24.1",
-    "eslint": "^4.13.0",
-    "html-webpack-plugin": "^2.30.1",
-    "prettier": "^1.9.1",
-    "prettier-eslint": "^8.2.5",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "webpack-dashboard": "^1.0.2",
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-hot-middleware": "^2.21.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }
