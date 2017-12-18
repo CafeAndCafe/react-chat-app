@@ -31,18 +31,18 @@ describe('actions', () => {
       expect(addMessage(message, 'You')).to.deep.equal(expected);
     });
   });
-});
 
-context('when adding a user', () => {
-  it('should create an action to add a user with id 0', () => {
-    const user = 'ForlornHope';
-    const expected = {
-      type: types.ADD_USER,
-      name: user,
-      id: 0
-    };
+  context('when adding a user', () => {
+    it('should create an action to add a user with id 0', () => {
+      const user = 'ForlornHope';
+      const expected = {
+        type: types.ADD_USER,
+        name: user,
+        id: 0
+      };
 
-    expect(addUser(user)).to.deep.equal(expected);
+      expect(addUser(user)).to.deep.equal(expected);
+    });
   });
 
   context('when adding a second user', () => {
