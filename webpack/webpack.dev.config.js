@@ -32,8 +32,11 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, use: "react-hot-loader/webpack" },
-      { test: /\.css$/, use: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`, "postcss-loader"] },
+      { test: /\.jsx?$/, exclude: [/node_modules/, /test/], use: "react-hot-loader/webpack" },
+      {
+        test: /\.css$/,
+        use: ["style-loader", `css-loader?${CSS_LOADER_OPTIONS}`, "postcss-loader"],
+      },
       ...config.module.rules,
     ],
   },

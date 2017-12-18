@@ -7,8 +7,11 @@ import { createStore } from "redux";
 
 import App from "./App/App";
 import chat from "./App/reducers/index";
+import { addUser } from "./App/actions/index";
 
 const store = createStore(chat);
+
+store.dispatch(addUser("Me"));
 
 function render(Root) {
   ReactDOM.hydrate(
