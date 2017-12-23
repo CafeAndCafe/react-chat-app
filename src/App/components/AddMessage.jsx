@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const AddMessage = (props) => {
   let input;
@@ -8,9 +8,9 @@ const AddMessage = (props) => {
     <section id="new-message">
       <input
         onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            props.dispatch(input.value, "Me");
-            input.value = "";
+          if (e.key === 'Enter') {
+            props.dispatch(input.value, 'Me');
+            input.value = '';
           }
         }}
         type="text"
@@ -23,7 +23,7 @@ const AddMessage = (props) => {
 };
 
 AddMessage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired
 };
 
 export default AddMessage;
